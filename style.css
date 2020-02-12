@@ -1,5 +1,10 @@
+* {
+  box-sizing: content-box;
+}
+
 body {
   font-family: 'Boogaloo', cursive !important;
+  overflow-x: hidden;
 }
 
 #submit-name {
@@ -14,9 +19,15 @@ body {
   font-size: 1.25rem;
 }
 
+#todo-container {
+  height: 150px;
+  overflow: auto;
+}
+
 #todo {
   text-align: center;
-  border: 1px dashed #01BAEF;
+  border: none;
+  border-bottom: 1px dashed #01BAEF;
 }
 
 #todo::placeholder {
@@ -24,12 +35,15 @@ body {
 }
 
 #todo:focus {
-  border: 1px solid #0188AE;
+  outline: none;
 }
 
 #todo-add {
   background-color: #01BAEF;
-  border: 1px dashed #000;
+  border: none;
+  border-radius: 15px;
+  width: 75px;
+  outline: none;
 }
 
 #todo-add:active {
@@ -39,4 +53,19 @@ body {
 
 #todo-add:hover {
   background-color: #0188AE;
+}
+
+#delete-todo {
+  border-radius: 15px;
+  border: none;
+  outline: none;
+}
+
+#delete-todo:active {
+  transform: translateY(2px);
+  background-color: rgb(126, 25, 45);
+}
+
+#delete-todo {
+  font-size: 0.8rem;
 }

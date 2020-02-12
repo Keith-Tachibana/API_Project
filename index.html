@@ -11,21 +11,27 @@
   </head>
   <body>
     <div class="row">
-      <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" id="nasa">
+      <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" id="nasa">
         <p class="text-white ml-2 mt-2">NASA Picture of the Day</p>
       </div>
-      <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+      <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7">
         <div id="greeting-container">
           <form>
-            <input type="text" class="form-control mt-4" id="submit-name" placeholder="Please enter your name" required="required" />
+            <input type="text" class="form-control mt-4 mb-4" id="submit-name" placeholder="Please enter your name" required="required" />
           </form>
           <p class="d-none display-1" id="greeting"></p>
         </div>
-        <form>
+        <div id="date"></div>
+        <form id="todo-form">
           <label for="todo">
-            <h4>My To Do List: <span><input type="text" id="todo" size="50" placeholder="Enter task to do here"/><button type="submit" id="todo-add" class="ml-2">Add</button></span></h4>
+            <h4>Today's To Do List: <span><input type="text" id="todo" name="add" size="50" placeholder="Enter task to do here"/><button type="button" id="todo-add" class="ml-2">Add</button></span></h4>
           </label>
         </form>
+        <div id="todo-container" class="justify-content-center d-flex">
+          <ul id="todo-ul">
+
+          </ul>
+        </div>
       </div>
       <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
         <span id="weather1"></span>
@@ -39,6 +45,7 @@
     <script src="./components/weather.js"></script>
     <script src="./components/nasa.js"></script>
     <script src="./components/greeting.js"></script>
+    <script src="./components/todo.js"></script>
     <script src="./components/app.js"></script>
     <script src="./main.js"></script>
   </body>

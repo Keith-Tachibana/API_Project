@@ -17,7 +17,7 @@ class Nasa {
 
   handleGetNasaSuccess(data) {
     console.log('NASA:', data);
-    document.querySelector('#nasa').style.cssText = `background-image:url(${data.url});background-size:contain;background-repeat:no-repeat;height:300px;float:right;`;
+    document.querySelector('#nasa').style.cssText = `background-image:url(${data.url});background-size:contain;background-repeat:no-repeat;height:400px;float:right;`;
 
   }
 

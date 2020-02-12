@@ -1,0 +1,42 @@
+body {
+  font-family: 'Boogaloo', cursive !important;
+}
+
+#submit-name {
+  width: 500px;
+  box-shadow:
+    0 0 30px 1px #fff,
+    0 0 50px 3px #f0f,
+    0 0 70px 5px #0ff;
+}
+
+#submit-name::placeholder {
+  font-size: 1.25rem;
+}
+
+#todo {
+  text-align: center;
+  border: 1px dashed #01BAEF;
+}
+
+#todo::placeholder {
+  color: #01BAEF;
+}
+
+#todo:focus {
+  border: 1px solid #0188AE;
+}
+
+#todo-add {
+  background-color: #01BAEF;
+  border: 1px dashed #000;
+}
+
+#todo-add:active {
+  transform: translateY(5px);
+  background-color: #0188AE;
+}
+
+#todo-add:hover {
+  background-color: #0188AE;
+}

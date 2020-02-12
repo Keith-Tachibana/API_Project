@@ -5,20 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Boogaloo&display=swap" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css" />
-    <title>Keith Tachibana: API Project</title>
+    <title>Keith Tachibana: Homepage API</title>
   </head>
   <body>
     <div class="row">
-      <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 ml-4 mt-4">
-        <p id="weather1"></p>
-        <p id="weather2"></p>
+      <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" id="nasa">
+        <p class="text-white ml-2 mt-2">NASA Picture of the Day</p>
+      </div>
+      <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <div id="greeting-container">
+          <form>
+            <input type="text" class="form-control mt-4" id="submit-name" placeholder="Please enter your name" required="required" />
+          </form>
+          <p class="d-none display-1" id="greeting"></p>
+        </div>
+        <form>
+          <label for="todo">
+            <h4>My To Do List: <span><input type="text" id="todo" size="50" placeholder="Enter task to do here"/><button type="submit" id="todo-add" class="ml-2">Add</button></span></h4>
+          </label>
+        </form>
+      </div>
+      <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+        <span id="weather1"></span>
+        <span id="weather2"></span>
+        <p id="weather3"></p>
       </div>
     </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="./components/weather.js"></script>
+    <script src="./components/nasa.js"></script>
+    <script src="./components/greeting.js"></script>
+    <script src="./components/app.js"></script>
     <script src="./main.js"></script>
   </body>
 </html>

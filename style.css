@@ -22,16 +22,20 @@ body {
 #todo-container {
   height: 150px;
   overflow: auto;
+  width: 600px;
 }
 
 #todo {
-  text-align: center;
   border: none;
   border-bottom: 1px dashed #01BAEF;
+  background-color: #fff;
 }
 
-#todo::placeholder {
-  color: #01BAEF;
+#todo:-webkit-autofill,
+#todo:-webkit-autofill:hover,
+#todo:-webkit-autofill:focus,
+#todo:-webkit-autofill:active  {
+  box-shadow: 0 0 0 30px white inset;
 }
 
 #todo:focus {

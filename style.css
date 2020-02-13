@@ -48,6 +48,7 @@ body {
 
 #todo-add {
   background-color: #01BAEF;
+  color: #fff;
   border: none;
   border-radius: 15px;
   width: 75px;
@@ -65,6 +66,7 @@ body {
 
 #delete-todo {
   border-radius: 15px;
+  font-size: 0.8rem;
   border: none;
   outline: none;
 }
@@ -74,19 +76,31 @@ body {
   background-color: rgb(126, 25, 45);
 }
 
-#delete-todo {
-  font-size: 0.8rem;
-}
-
 #headlines {
-  height: 600px;
+  height: 900px;
   overflow: auto;
   font-size: 1.25rem;
 }
 
 #sports {
-  height: 600px;
+  height: 900px;
   overflow: auto;
   font-size: 1.25rem;
   direction: rtl;
+}
+
+#weather-submit {
+  background-color: #01BAEF;
+  color: #fff;
+  border: none;
+  outline: none;
+}
+
+#weather-submit:active {
+  transform: translateY(2px);
+  background-color: #0188AE;
+}
+
+#weather-submit:hover {
+  background-color: #0188AE;
 }

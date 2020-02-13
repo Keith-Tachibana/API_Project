@@ -1,4 +1,6 @@
-const weather = new Weather();
+const form = document.getElementById('weather-form');
+
+const weather = new Weather(form);
 const nasa = new Nasa();
 const greeting = new Greeting();
 const newDate = new NewDate();

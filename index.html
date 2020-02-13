@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Boogaloo&display=swap" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
     <title>Keith Tachibana: Homepage API</title>
   </head>
   <body>
@@ -24,20 +25,31 @@
             <h4>Today's To Do List: <span><input type="text" id="todo" class="ml-4" name="add" size="50" placeholder="Enter task to do here" required="required" /><button type="button" id="todo-add" class="ml-2">Add</button></span></h4>
           </label>
         </form>
-        <div id="todo-container" class="border border-info">
+        <div id="todo-container">
           <ul id="todo-ul"></ul>
         </div>
       </div>
       <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 mt-4">
-        <p id="date" class="h5"></p>
-        <p id="clock" class="h5"></p>
+        <i class="far fa-calendar-alt fa-lg"><span id="date" class="h5 ml-2"></span></i>
+        <i class="far fa-clock fa-lg mt-3"><span id="clock" class="h5 ml-2"></span></i>
 
       </div>
       <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-        <p id="weather1" class="h5"><span id="weatherIMG"></span></p>
-        <p id="weather2" class="h5"></p>
-        <p id="weather3" class="h5"></p>
-        <p id="weather4" class="h5"></p>
+        <form class="form-inline" id="weather-form">
+          <div class="input-group mt-4">
+            <div class="input-group-prepend">
+              <i class="input-group-text fas fa-cloud-sun"></i>
+            </div>
+            <input type="text" name="weather" id="weather-search" placeholder="Enter city name for weather" size="30" required="required" />
+            <button type="submit" name="weather-submit" id="weather-submit">Submit</button>
+          </div>
+        </form>
+        <span id="weather1" class="h5 d-none mt-2"></span><span id="weatherIMG" class="d-none"></span>
+        <p id="weather2" class="h5 d-none"></p>
+        <p id="weather3" class="h5 d-none"></p>
+        <p id="weather4" class="h5 d-none"></p>
+        <p id="weather5" class="h5 d-none"></p>
+        <p id="weather6" class="h5 d-none"></p>
       </div>
     </div>
     <div class="row mt-4">

@@ -19,7 +19,7 @@ class Nasa {
     console.log('NASA:', data);
     document.querySelector('#nasa').style.cssText = `background-image:url(${data.url});background-size:contain;background-repeat:no-repeat;height:300px;float:right;`;
     let title = document.createElement('p');
-    title.classList.add('ml-2', 'mt-2', 'text-white');
+    title.classList.add('ml-2', 'mt-2', 'text-white', 'h4');
     title.textContent = `"${data.title}"`;
     $('#nasa').append(title);
   }

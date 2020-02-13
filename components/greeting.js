@@ -29,7 +29,7 @@ class Greeting {
     greet.classList.remove("d-none");
     const date = new Date();
     const hr = date.getHours();
-    if (hr <= 5) {
+    if (hr <= 5 || hr >= 17) {
       greet.innerHTML = `Good evening, ${name}!`;
     } else if (hr >= 12) {
       greet.innerHTML = `Good afternoon, ${name}!`;

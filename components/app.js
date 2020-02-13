@@ -9,7 +9,7 @@ class App {
   }
 
   start() {
-    this.weather.getWeather();
+    this.weather.loadWeather();
     this.nasa.getNasa();
     this.greeting.loadName();
     this.newDate.getDate();

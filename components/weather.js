@@ -20,6 +20,8 @@ class Weather {
     console.log('Weather:', data);
     let spanWeather1 = document.createElement('span');
     let spanWeather2 = document.createElement('span');
+    let spanWeather3 = document.createElement('span');
+    let spanWeather4 = document.createElement('span');
     let weatherIMG = document.createElement('img');
     weatherIMG.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     let tempK = data.main.temp;
@@ -30,13 +32,15 @@ class Weather {
     let maxTempF = ((maxTempK - 273.15) * (9 / 5) + 32).toFixed(1);
     let windMS = data.wind.speed;
     let windMPH = (windMS*2.237).toFixed(2);
-    spanWeather1.innerHTML = "City: "+data.name+" &#124; Temp: "+tempF+"&deg;"+"F, Min: "+minTempF+"&deg;F, Max: "+maxTempF+"&deg;F";
-    $('#weather3').append(weatherIMG);
+    spanWeather1.innerHTML = `City: ${data.name}`;
+    spanWeather2.innerHTML = `Temp: ${tempF}` + '&deg;F,' + ` Min: ${minTempF}` + '&deg;F,' + ` Max: ${maxTempF}` + '&deg;F';
+    spanWeather3.innerHTML = `Conditions: ${data.weather[0].main} (${data.weather[0].description})`;
+    spanWeather4.innerHTML = `Wind: ${windMPH} mph`;
     $('#weather1').append(spanWeather1);
-    spanWeather2.innerHTML = "&#124; Conditions: " + data.weather[0].main + " (" + data.weather[0].description + ") &#124; Wind: " + windMPH + " mph";
     $('#weather2').append(spanWeather2);
-
-
+    $('#weather3').append(spanWeather3);
+    $('#weather4').append(spanWeather4);
+    $('#weatherIMG').append(weatherIMG);
   }
   handleGetWeatherError(error) {
     console.log(error);

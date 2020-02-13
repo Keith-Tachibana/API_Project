@@ -20,15 +20,19 @@ body {
 }
 
 #todo-container {
-  height: 150px;
+  height: 120px;
   overflow: auto;
-  width: 600px;
+  width: 700px;
 }
 
 #todo {
   border: none;
   border-bottom: 1px dashed #01BAEF;
   background-color: #fff;
+}
+
+#todo::placeholder {
+  text-align: center;
 }
 
 #todo:-webkit-autofill,
@@ -72,4 +76,17 @@ body {
 
 #delete-todo {
   font-size: 0.8rem;
+}
+
+#headlines {
+  height: 600px;
+  overflow: auto;
+  font-size: 1.25rem;
+}
+
+#sports {
+  height: 600px;
+  overflow: auto;
+  font-size: 1.25rem;
+  direction: rtl;
 }

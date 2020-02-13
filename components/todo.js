@@ -8,6 +8,6 @@ function addToDo() {
   if (!todo) {
      return null;
   }
-  $('#todo-ul').append('<li>' + todo +'<span><button class="ml-2 mb-2 bg-danger text-white" id="delete-todo">Delete</button></span></li>');
+  $('#todo-ul').append('<li class="h5">' + todo +'<span><button class="ml-2 mb-2 bg-danger text-white" id="delete-todo">Delete</button></span></li>');
   $('#todo').val('');
 }

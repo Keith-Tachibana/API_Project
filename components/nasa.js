@@ -3,6 +3,7 @@ class Nasa {
     this.handleGetNasaSuccess = this.handleGetNasaSuccess.bind(this);
     this.handleGetNasaError = this.handleGetNasaError.bind(this);
   }
+  
   getNasa() {
     $.ajax({
       method: 'GET',

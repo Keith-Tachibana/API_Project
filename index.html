@@ -12,15 +12,15 @@
   </head>
   <body>
     <div class="row">
-      <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" id="nasa"></div>
+      <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 mt-2" id="nasa"></div>
       <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
-        <div id="greeting-container">
+        <div id="greeting-container" class="text-center">
           <form>
-            <input type="text" class="form-control mt-4 mb-4" id="submit-name" placeholder="Please enter your name" required="required" />
+            <input type="text" class="form-control mt-4 mb-4 text-center" id="submit-name" placeholder="Please enter your name" required="required" />
           </form>
           <p class="d-none display-1" id="greeting"></p>
         </div>
-        <form id="todo-form">
+        <form id="todo-form" class="text-center">
           <label for="todo">
             <h4>Today's To Do List: <span><input type="text" id="todo" class="ml-4" name="add" size="50" placeholder="Enter task to do here" required="required" /><button type="button" id="todo-add" class="ml-2">Add</button></span></h4>
           </label>
@@ -30,9 +30,11 @@
         </div>
       </div>
       <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 mt-4">
-        <i class="far fa-calendar-alt fa-lg"><span id="date" class="h5 ml-2"></span></i>
-        <i class="far fa-clock fa-lg mt-3"><span id="clock" class="h5 ml-2"></span></i>
-
+        <i class="far fa-calendar-alt fa-lg"><span id="date" class="h5 ml-1"></span></i><i class="far fa-clock fa-lg ml-2"><span id="clock" class="h5 ml-1"></span></i>
+        <div id="stocks-container" class="mt-2">
+          <div id="stocks">[Stock Ticker] &gt;&gt;&gt; </div>
+        </div>
+        <div id="maps" style="height:250px;"></div>
       </div>
       <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
         <form class="form-inline" id="weather-form">
@@ -40,7 +42,7 @@
             <div class="input-group-prepend">
               <i class="input-group-text fas fa-cloud-sun"></i>
             </div>
-            <input type="text" name="weather" id="weather-search" placeholder="Enter city name for weather" size="30" required="required" />
+            <input type="text" name="weather" id="weather-search" placeholder="Enter city name for weather" size="35" required="required" />
             <button type="submit" name="weather-submit" id="weather-submit">Submit</button>
           </div>
         </form>
@@ -55,18 +57,30 @@
     <div class="row mt-4">
       <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
         <div class="display-4 text-center">-Top Headlines-</div>
+        <form class="form-inline justify-content-center mt-4" id="headlines-form">
+          <div class="input-group-prepend">
+            <i class="input-group-text mb-2 far fa-newspaper"></i>
+          </div>
+          <input type="text" class="w-75 mb-2" id="headlines-search" name="headlines-search" placeholder="Search For Top Headlines Here" required="required" />
+          <button type="submit" name="headlines-submit" id="headlines-submit" class="mb-2">Search</button>
+        </form>
       </div>
       <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
         <div class="display-4 text-center">-Sports-</div>
+        <form class="form-inline justify-content-center mt-4" id="sports-form">
+          <div class="input-group-prepend">
+            <i class="input-group-text mb-2 fas fa-futbol"></i>
+          </div>
+          <input type="text" class="w-75 mb-2" id="sports-search" name="sports-search" placeholder="Search For Sports News Here" required="required" />
+          <button type="submit" name="sports-submit" id="sports-submit" class="mb-2">Search</button>
+        </form>
       </div>
     </div>
     <div class="row mt-4">
-      <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" id="headlines"></div>
+      <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 pl-4" id="headlines"></div>
       <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" id="sports">
       </div>
     </div>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="./components/weather.js"></script>
     <script src="./components/nasa.js"></script>
@@ -75,6 +89,8 @@
     <script src="./components/clock.js"></script>
     <script src="./components/todo.js"></script>
     <script src="./components/news.js"></script>
+    <script src="./components/sports.js"></script>
+    <script src="./components/stocks.js"></script>
     <script src="./components/app.js"></script>
     <script src="./main.js"></script>
   </body>

@@ -1,44 +1,44 @@
-class News {
-  constructor(formHeadlines) {
-    this.formHeadlines = formHeadlines;
-    this.getHeadlines = this.getHeadlines.bind(this);
-    this.createHeadlines = this.createHeadlines.bind(this);
-    this.handleGetHeadlinesSuccess = this.handleGetHeadlinesSuccess.bind(this);
-    this.handleGetHeadlinesError = this.handleGetHeadlinesError.bind(this);
-    this.handleSubmitHeadlines = this.handleSubmitHeadlines.bind(this);
-    this.formHeadlines.addEventListener('submit', this.handleSubmitHeadlines);
+class Sports {
+  constructor(formSports) {
+    this.formSports = formSports;
+    this.getSports = this.getSports.bind(this);
+    this.createSports = this.createSports.bind(this);
+    this.handleGetSportsSuccess = this.handleGetSportsSuccess.bind(this);
+    this.handleGetSportsError = this.handleGetSportsError.bind(this);
+    this.handleSubmitSports = this.handleSubmitSports.bind(this);
+    this.formSports.addEventListener('submit', this.handleSubmitSports);
   }
 
-  getHeadlines(input) {
+  getSports(input) {
     $.ajax({
       method: 'GET',
       url: 'https://newsapi.org/v2/everything',
       data: {
-        'q': `${input}`
+        'q': `Sports`
       },
       dataType: 'json',
       headers: {
         'X-Api-Key': '9b42d4b9c71d43ae81704e5ca321f04d'
       },
-      success: this.handleGetHeadlinesSuccess,
-      error: this.handleGetHeadlinesError
+      success: this.handleGetSportsSuccess,
+      error: this.handleGetSportsError
     })
   }
 
-  handleGetHeadlinesSuccess(data) {
+  handleGetSportsSuccess(data) {
     data.articles.sort(function (a, b) {
       return ((new Date(b.publishedAt)) - (new Date(a.publishedAt)));
     });
     for (let i = 0; i < data.articles.length; i++) {
-      this.createHeadlines(data.articles[i]);
+      this.createSports(data.articles[i]);
     };
   }
 
-  handleGetHeadlinesError(error) {
+  handleGetSportsError(error) {
     console.log(error);
   }
 
-  createHeadlines(articles) {
+  createSports(articles) {
     let section = document.createElement('section');
     let title = document.createElement('h4');
     let source = document.createElement('h6');
@@ -70,15 +70,15 @@ class News {
     image.classList.add('img-fluid', 'rounded');
     hr.classList.add('bg-info');
     section.append(title, source, author, datePublished, description, image, hr);
-    $('#headlines').append(section);
+    $('#sports').append(section);
   }
 
-  handleSubmitHeadlines(event) {
+  handleSubmitSports(event) {
     event.preventDefault();
-    $('#headlines').text('');
+    $('#sports').text('');
     let formData = new FormData(event.target);
-    let query = formData.get('headlines-search');
-    this.getHeadlines(query);
+    let query = formData.get('sports-search');
+    this.getSports(query);
     event.target.reset();
   }
 }

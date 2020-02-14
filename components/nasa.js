@@ -17,10 +17,10 @@ class Nasa {
 
   handleGetNasaSuccess(data) {
     console.log('NASA:', data);
-    document.querySelector('#nasa').style.cssText = `background-image:url(${data.url});background-size:contain;background-repeat:no-repeat;height:300px;float:right;`;
+    document.querySelector('#nasa').style.cssText = `background-image:url(${data.url});background-size:cover;background-position:center;background-repeat:no-repeat;height:300px;border-radius:15px;float:right;`;
     let title = document.createElement('p');
     title.classList.add('ml-2', 'mt-2', 'text-white', 'h4');
-    title.textContent = `"${data.title}"`;
+    title.textContent = `NASA Pic Of The Day: "${data.title}"`;
     $('#nasa').append(title);
   }
 

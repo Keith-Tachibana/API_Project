@@ -1,11 +1,13 @@
 class App {
-  constructor(weather, nasa, greeting, newDate, clock, news) {
+  constructor(weather, nasa, greeting, newDate, clock, news, sports, stocks) {
     this.weather = weather;
     this.nasa = nasa;
     this.greeting = greeting;
     this.newDate = newDate;
     this.clock = clock;
     this.news = news;
+    this.sports = sports;
+    this.stocks = stocks;
   }
 
   start() {
@@ -15,6 +17,7 @@ class App {
     this.newDate.getDate();
     this.clock.getTime();
     this.news.getHeadlines();
-    this.news.getSports();
+    this.sports.getSports();
+    this.stocks.getStocks();
   }
 }

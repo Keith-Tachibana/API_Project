@@ -1,24 +1,22 @@
 class Sports {
-  constructor(formSports) {
-    this.formSports = formSports;
+  constructor() {
     this.getSports = this.getSports.bind(this);
     this.createSports = this.createSports.bind(this);
     this.handleGetSportsSuccess = this.handleGetSportsSuccess.bind(this);
     this.handleGetSportsError = this.handleGetSportsError.bind(this);
-    this.handleSubmitSports = this.handleSubmitSports.bind(this);
-    this.formSports.addEventListener('submit', this.handleSubmitSports);
   }
 
-  getSports(input) {
+  getSports() {
     $.ajax({
       method: 'GET',
-      url: 'https://newsapi.org/v2/everything',
+      url: 'https://newsapi.org/v2/top-headlines',
       data: {
-        'q': `Sports`
+        'category': 'sports',
+        'country': 'US'
       },
       dataType: 'json',
       headers: {
-        'X-Api-Key': '9b42d4b9c71d43ae81704e5ca321f04d'
+        'X-Api-Key': '9b42d4b9c71d43ae81704e5ca321f04d',
       },
       success: this.handleGetSportsSuccess,
       error: this.handleGetSportsError
@@ -31,7 +29,7 @@ class Sports {
     });
     for (let i = 0; i < data.articles.length; i++) {
       this.createSports(data.articles[i]);
-    };
+    }
   }
 
   handleGetSportsError(error) {
@@ -64,21 +62,12 @@ class Sports {
     description.append(spanURL);
     spanURL.append(url);
     url.setAttribute('href', articles.url);
-    url.textContent = 'Click Here To Continue Reading';
+    url.textContent = ' [Click Here To Continue Reading]';
     image.src = articles.urlToImage;
     image.setAttribute('width', '400');
     image.classList.add('img-fluid', 'rounded');
     hr.classList.add('bg-info');
     section.append(title, source, author, datePublished, description, image, hr);
     $('#sports').append(section);
-  }
-
-  handleSubmitSports(event) {
-    event.preventDefault();
-    $('#sports').text('');
-    let formData = new FormData(event.target);
-    let query = formData.get('sports-search');
-    this.getSports(query);
-    event.target.reset();
   }
 }

@@ -12,26 +12,25 @@ class News {
   getHeadlines(input) {
     $.ajax({
       method: 'GET',
-      url: 'https://newsapi.org/v2/everything',
+      url: 'https://api.nytimes.com/svc/search/v2/articlesearch.json',
       data: {
-        'q': `${input}`
+        'q': input,
+        'api-key': 'vGNDizfY2zWHYTOSjG97GwH02IP3Oj2v'
       },
       dataType: 'json',
-      headers: {
-        'X-Api-Key': '9b42d4b9c71d43ae81704e5ca321f04d'
-      },
       success: this.handleGetHeadlinesSuccess,
       error: this.handleGetHeadlinesError
     })
   }
 
   handleGetHeadlinesSuccess(data) {
-    data.articles.sort(function (a, b) {
-      return ((new Date(b.publishedAt)) - (new Date(a.publishedAt)));
+    console.log(data);
+    data.response.docs.sort(function (a, b) {
+      return ((new Date(b.pub_date)) - (new Date(a.pub_date)));
     });
-    for (let i = 0; i < data.articles.length; i++) {
-      this.createHeadlines(data.articles[i]);
-    };
+    for (let i = 0; i < data.response.docs.length; i++) {
+      this.createHeadlines(data.response.docs[i]);
+    }
   }
 
   handleGetHeadlinesError(error) {
@@ -49,23 +48,23 @@ class News {
     let url = document.createElement('a');
     let image = document.createElement('img');
     let hr = document.createElement('hr');
-    title.textContent = articles.title;
+    title.textContent = articles.headline.main;
     title.classList.add('font-weight-bold');
-    source.textContent = `Source: ${articles.source.name}`;
+    source.textContent = `Source: NY Times`;
     source.classList.add('font-weight-bold');
-    author.textContent = `By: ${articles.author}`;
+    author.textContent = `By: ${articles.byline.original}`;
     author.classList.add('font-italic');
-    let dateString = articles.publishedAt;
+    let dateString = articles.pub_date;
     let dateSlice = dateString.slice(0, 10).split('-');
     let dateFormatted = `${dateSlice[1]}/${dateSlice[2]}/${dateSlice[0]}`;
     datePublished.textContent = `Published On: ${dateFormatted}`;
     datePublished.classList.add('font-italic');
-    description.textContent = articles.description;
+    description.textContent = articles.abstract;
     description.append(spanURL);
     spanURL.append(url);
-    url.setAttribute('href', articles.url);
-    url.textContent = 'Click Here To Continue Reading';
-    image.src = articles.urlToImage;
+    url.setAttribute('href', articles.web_url);
+    url.textContent = ' [Click Here To Continue Reading]';
+    image.src = 'https://www.nytimes.com/' + articles.multimedia[0].url;
     image.setAttribute('width', '400');
     image.classList.add('img-fluid', 'rounded');
     hr.classList.add('bg-info');

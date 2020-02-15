@@ -96,7 +96,7 @@ body {
   direction: rtl;
 }
 
-#weather-submit, #headlines-submit, #sports-submit {
+#weather-submit, #headlines-submit {
   background-color: #043565;
   color: #fff;
   border: none;
@@ -104,20 +104,20 @@ body {
   border-radius: 5px;
 }
 
-#headlines-submit, #sports-submit {
+#headlines-submit {
   font-size: 1.2rem;
 }
 
-#weather-submit:active, #headlines-submit:active, #sports-submit:active {
+#weather-submit:active, #headlines-submit:active {
   transform: translateY(2px);
   background-color: #03274A;
 }
 
-#weather-submit:hover, #headlines-submit:hover, #sports-submit:hover {
+#weather-submit:hover, #headlines-submit:hover {
   background-color: #03274A;
 }
 
-#weather-search::placeholder, #headlines-search::placeholder, #sports-search::placeholder {
+#headlines-search::placeholder {
   padding-left: 10px;
 }
 

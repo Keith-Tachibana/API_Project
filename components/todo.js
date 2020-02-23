@@ -1,49 +1,39 @@
-const taskList = [];
 const ul = document.getElementById('toDo-ul');
 const add = document.getElementById('toDo-add');
 const deleteButton = document.getElementById('delete-toDo');
-add.addEventListener('click', addToDo);
+let itemsArray = localStorage.getItem('taskList') ? JSON.parse(localStorage.getItem('taskList')) : [];
 
-function addToDo() {
+localStorage.setItem('taskList', JSON.stringify(itemsArray));
+const data = JSON.parse(localStorage.getItem('taskList'));
+
+const liMaker = text => {
+  const li = document.createElement('li');
+  const span = document.createElement('span');
+  const deleteButton = document.createElement('button');
+  deleteButton.textContent = 'Delete';
+  li.textContent = text;
+  deleteButton.classList.add('ml-2', 'mb-2', 'bg-danger', 'text-white');
+  deleteButton.setAttribute('id', 'delete-toDo');
+  span.appendChild(deleteButton);
+  li.appendChild(span);
+  ul.appendChild(li);
+  deleteButton.addEventListener('click', function(event) {
+    const text = event.target.parentElement.parentNode.childNodes[0].textContent;
+    const index = itemsArray.findIndex(x => x === text);
+    itemsArray.splice(index, 1);
+    localStorage.setItem('taskList', JSON.stringify(itemsArray));
+
+  });
+};
+
+$('#toDo-add').on('click', function(event) {
   let toDo = $('#toDo').val();
-  if (!toDo) {
-    return null;
-  }
-  const task = {
-    task: toDo
-  };
-  taskList[taskList.length] = task;
-  localStorage.taskList = JSON.stringify(taskList);
+  itemsArray.push(toDo);
+  localStorage.setItem('taskList', JSON.stringify(itemsArray));
+  liMaker(toDo);
   $('#toDo').val('');
-  loadToDo();
-}
+});
 
-function loadToDo() {
-  if (!localStorage.taskList) {
-    return false;
-  }
-  ul.textContent = '';
-  let newTaskList = JSON.parse(localStorage.taskList);
-  for (let i = 0; i < newTaskList.length; i++) {
-    let li = document.createElement('li');
-    let span = document.createElement('span');
-    let deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Delete';
-    li.textContent = newTaskList[i].task;
-    deleteButton.classList.add('ml-2', 'mb-2', 'bg-danger', 'text-white');
-    deleteButton.setAttribute('id', 'delete-toDo');
-    span.appendChild(deleteButton);
-    li.appendChild(span);
-    ul.appendChild(li);
-    deleteButton.addEventListener('click', function () {
-      let sliced = event.currentTarget.parentElement.parentElement.textContent.replace('Delete', '');
-      deleteToDo(sliced);
-    })
-  }
-}
-
-function deleteToDo(task) {
-  localStorage.removeItem(JSON.stringify(task));
-}
-
-loadToDo();
+data.forEach(item => {
+  liMaker(item);
+})

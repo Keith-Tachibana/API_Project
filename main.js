@@ -11,6 +11,7 @@ const news = new News(formHeadlines);
 const sports = new Sports(formSports)
 const stocks = new Stocks();
 const giphy = new Giphy();
-const app = new App(weather, nasa, greeting, newDate, clock, news, sports, stocks, giphy);
+const quotes = new Quotes();
+const app = new App(weather, nasa, greeting, newDate, clock, news, sports, stocks, giphy, quotes);
 
 app.start();

@@ -29,7 +29,83 @@ class Weather {
     let spanWeather5 = document.createElement('span');
     let spanWeather6 = document.createElement('span');
     let weatherIMG = document.createElement('img');
-    weatherIMG.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    let src = null;
+    switch (data.weather[0].description.toLowerCase()) {
+      case 'clear sky':
+        src = 'https://www.metaweather.com/static/img/weather/ico/c.ico';
+        break;
+      case 'few clouds':
+        src = 'https://www.metaweather.com/static/img/weather/ico/lc.ico';
+        break;
+      case 'scattered clouds':
+      case 'broken clouds':
+      case 'overcast clouds':
+        src = 'https://www.metaweather.com/static/img/weather/ico/hc.ico';
+        break;
+      case 'shower rain':
+      case 'heavy intensity rain':
+      case 'very heavy rain':
+      case 'extreme rain':
+      case 'freezing rain':
+      case 'light intensity shower rain':
+      case 'heavy intensity shower rain':
+      case 'ragged shower rain':
+      case 'shower rain and drizzle':
+      case 'shower drizzle':
+      case 'heavy shower rain and drizzle':
+        src = 'https://www.metaweather.com/static/img/weather/ico/s.ico';
+        break;
+      case 'rain':
+      case 'light rain':
+      case 'moderate rain':
+      case 'light intensity drizzle':
+      case 'drizzle':
+      case 'heavy intensity drizzle':
+      case 'light intensity drizzle':
+      case 'drizzle rain':
+      case 'heavy intensity drizzle rain':
+        src = 'https://www.metaweather.com/static/img/weather/ico/hr.ico';
+        break;
+      case 'thunderstorm':
+      case 'thunderstorm with light rain':
+      case 'thunderstorm with rain':
+      case 'thunderstorm with heavy rain':
+      case 'light thunderstorm':
+      case 'heavy thunderstorm':
+      case 'ragged thunderstorm':
+      case 'thunderstorm with light drizzle':
+      case 'thunderstorm with drizle':
+      case 'thunderstorm with heavy drizzle':
+        src = 'https://www.metaweather.com/static/img/weather/ico/t.ico';
+        break;
+      case 'snow':
+      case 'light snow':
+      case 'heavy snow':
+      case 'sleet':
+      case 'light shower sleet':
+      case 'shower sleet':
+      case 'light rain and snow':
+      case 'rain and snow':
+      case 'light shower snow':
+      case 'shower snow':
+      case 'heavy shower snow':
+        src = 'https://www.metaweather.com/static/img/weather/ico/sn.ico';
+        break;
+      case 'mist':
+      case 'fog':
+      case 'smoke':
+      case 'haze':
+      case 'sand/ dust whirls':
+      case 'sand':
+      case 'dust':
+      case 'volcanic ash':
+      case 'squalls':
+      case 'tornado':
+        src = 'http://openweathermap.org/img/wn/50d@2x.png';
+        break;
+    }
+    weatherIMG.src = src;
+    //weatherIMG.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     let tempK = data.main.temp;
     let tempF = ((tempK - 273.15) * (9/5) + 32).toFixed(1);
     let minTempK = data.main.temp_min;
@@ -54,13 +130,13 @@ class Weather {
     spanWeather4.innerHTML = `Wind: ${windMPH} mph`;
     spanWeather5.innerHTML = `Sunrise: ${sunriseTime}`;
     spanWeather6.innerHTML = `Sunset: ${sunsetTime}`;
-    $('#weather1, #weather2, #weather3, #weather4, #weather5, #weather6, #weatherIMG').removeClass('d-none');
-    $('#weather1').append(spanWeather1);
-    $('#weather2').append(spanWeather2);
-    $('#weather3').append(spanWeather3);
-    $('#weather4').append(spanWeather4);
-    $('#weather5').append(spanWeather5);
-    $('#weather6').append(spanWeather6);
+    $('#city, #temps, #condition, #wind, #sunrise, #sunset, #weatherIMG').removeClass('d-none');
+    $('#city').append(spanWeather1);
+    $('#temps').append(spanWeather2);
+    $('#condition').append(spanWeather3);
+    $('#wind').append(spanWeather4);
+    $('#sunrise').append(spanWeather5);
+    $('#sunset').append(spanWeather6);
     $('#weatherIMG').append(weatherIMG);
   }
   handleGetWeatherError(error) {
@@ -69,7 +145,7 @@ class Weather {
 
   handleSubmitWeather(event) {
     event.preventDefault();
-    $('#weather1, #weather2, #weather3, #weather4, #weather5, #weather6, #weatherIMG').text('');
+    $('#city, #temps, #condition, #wind, #sunrise, #sunset, #weatherIMG').text('');
     let formData = new FormData(event.target);
     let city = formData.get('weather');
     this.getWeather(city);

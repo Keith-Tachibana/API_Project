@@ -12,10 +12,12 @@ class News {
   getHeadlines(input) {
     $.ajax({
       method: 'GET',
-      url: 'https://api.nytimes.com/svc/search/v2/articlesearch.json',
+      url: 'https://newsapi.org/v2/everything',
       data: {
-        'q': input,
-        'api-key': 'vGNDizfY2zWHYTOSjG97GwH02IP3Oj2v'
+        'q': `${input}`,
+      },
+      headers: {
+        'X-Api-Key': '9b42d4b9c71d43ae81704e5ca321f04d'
       },
       dataType: 'json',
       success: this.handleGetHeadlinesSuccess,
@@ -24,12 +26,11 @@ class News {
   }
 
   handleGetHeadlinesSuccess(data) {
-    console.log(data);
-    data.response.docs.sort(function (a, b) {
-      return ((new Date(b.pub_date)) - (new Date(a.pub_date)));
+    data.articles.sort(function (a, b) {
+      return ((new Date(b.publishedAt)) - (new Date(a.publishedAt)));
     });
-    for (let i = 0; i < data.response.docs.length; i++) {
-      this.createHeadlines(data.response.docs[i]);
+    for (let i = 0; i < data.articles.length; i++) {
+      this.createHeadlines(data.articles[i]);
     }
   }
 
@@ -48,23 +49,23 @@ class News {
     let url = document.createElement('a');
     let image = document.createElement('img');
     let hr = document.createElement('hr');
-    title.textContent = articles.headline.main;
+    title.textContent = articles.title;
     title.classList.add('font-weight-bold');
     source.textContent = `Source: NY Times`;
     source.classList.add('font-weight-bold');
-    author.textContent = `By: ${articles.byline.original}`;
+    author.textContent = `By: ${articles.source.name}`;
     author.classList.add('font-italic');
-    let dateString = articles.pub_date;
+    let dateString = articles.publishedAt;
     let dateSlice = dateString.slice(0, 10).split('-');
     let dateFormatted = `${dateSlice[1]}/${dateSlice[2]}/${dateSlice[0]}`;
     datePublished.textContent = `Published On: ${dateFormatted}`;
     datePublished.classList.add('font-italic');
-    description.textContent = articles.abstract;
+    description.textContent = articles.description;
     description.append(spanURL);
     spanURL.append(url);
-    url.setAttribute('href', articles.web_url);
+    url.setAttribute('href', articles.url);
     url.textContent = ' [Click Here To Continue Reading]';
-    image.src = 'https://www.nytimes.com/' + articles.multimedia[0].url;
+    image.src = articles.urlToImage;
     image.setAttribute('width', '400');
     image.classList.add('img-fluid', 'rounded');
     hr.classList.add('bg-info');

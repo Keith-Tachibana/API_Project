@@ -7,6 +7,12 @@ body {
   overflow-x: hidden;
 }
 
+#calendar {
+  position: relative;
+  left: 5px;
+  top: 5px;
+}
+
 #greeting-container {
   display: flex;
   justify-content: center;
@@ -26,34 +32,39 @@ body {
   font-size: 1.25rem;
 }
 
-#todo-container {
+#toDo-container {
   height: 120px;
   overflow: auto;
   width: 700px;
 }
 
-#todo {
+#todDo {
   border: none;
-  border-bottom: 1px dashed #043565;
+  border-bottom: 1px solid #043565;
   background-color: #fff;
 }
 
-#todo::placeholder {
+#toDo-form {
+  position: relative;
+  top: -55%;
+}
+
+#toDo::placeholder {
   text-align: center;
 }
 
-#todo:-webkit-autofill,
-#todo:-webkit-autofill:hover,
-#todo:-webkit-autofill:focus,
-#todo:-webkit-autofill:active  {
+#toDo:-webkit-autofill,
+#toDo:-webkit-autofill:hover,
+#toDo:-webkit-autofill:focus,
+#toDo:-webkit-autofill:active  {
   box-shadow: 0 0 0 30px white inset;
 }
 
-#todo:focus {
+#toDo:focus {
   outline: none;
 }
 
-#todo-add {
+#toDo-add {
   background-color: #043565;
   color: #fff;
   border: none;
@@ -62,23 +73,27 @@ body {
   outline: none;
 }
 
-#todo-add:active {
+#toDo-add:active {
   transform: translateY(5px);
   background-color: #03274A;
 }
 
-#todo-add:hover {
+#toDo-add:hover {
   background-color: #03274A;
 }
 
-#delete-todo {
+#toDo-ul {
+  display: inline-block;
+}
+
+#delete-toDo {
   border-radius: 15px;
   font-size: 0.9rem;
   border: none;
   outline: none;
 }
 
-#delete-todo:active {
+#delete-toDo:active {
   transform: translateY(2px);
   background-color: rgb(126, 25, 45);
 }
@@ -86,14 +101,33 @@ body {
 #headlines {
   height: 800px;
   overflow: auto;
-  font-size: 1.25rem;
+  font-size: 1rem;
+  font-family: Tahoma, sans-serif;
 }
 
 #sports {
   height: 800px;
   overflow: auto;
-  font-size: 1.25rem;
+  font-size: 1rem;
   direction: rtl;
+  font-family: Tahoma, sans-serif;
+}
+
+#weather-form {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+}
+
+#weather-city-container, #temps, #condition, #wind, #sunrise, #sunset {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+}
+
+#city {
+  position: relative;
+  top: 15px;
 }
 
 #weather-submit, #headlines-submit {
@@ -142,7 +176,7 @@ body {
 #stocks-container {
   overflow: hidden;
   white-space: nowrap;
-  border: 1px groove #043565;
+  border: 1px groove #fff;
 }
 
 #stocks {

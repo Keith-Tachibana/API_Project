@@ -1,5 +1,5 @@
 class App {
-  constructor(weather, nasa, greeting, newDate, clock, news, sports, stocks) {
+  constructor(weather, nasa, greeting, newDate, clock, news, sports, stocks, giphy) {
     this.weather = weather;
     this.nasa = nasa;
     this.greeting = greeting;
@@ -8,6 +8,7 @@ class App {
     this.news = news;
     this.sports = sports;
     this.stocks = stocks;
+    this.giphy = giphy;
   }
 
   start() {
@@ -19,5 +20,6 @@ class App {
     this.news.getHeadlines();
     this.sports.getSports();
     this.stocks.getStocks();
+    this.giphy.getGiphy();
   }
 }

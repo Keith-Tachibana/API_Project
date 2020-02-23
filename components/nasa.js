@@ -3,7 +3,7 @@ class Nasa {
     this.handleGetNasaSuccess = this.handleGetNasaSuccess.bind(this);
     this.handleGetNasaError = this.handleGetNasaError.bind(this);
   }
-  
+
   getNasa() {
     $.ajax({
       method: 'GET',
@@ -20,7 +20,7 @@ class Nasa {
     console.log('NASA:', data);
     document.querySelector('#nasa').style.cssText = `background-image:url(${data.url});background-size:cover;background-position:center;background-repeat:no-repeat;height:300px;border-radius:15px;float:right;`;
     let title = document.createElement('p');
-    title.classList.add('ml-2', 'mt-2', 'text-white', 'h4');
+    title.classList.add('ml-2', 'mt-2', 'text-white', 'h4', 'text-center');
     title.textContent = `NASA Pic Of The Day: "${data.title}"`;
     $('#nasa').append(title);
   }

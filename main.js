@@ -10,6 +10,7 @@ const clock = new Clock();
 const news = new News(formHeadlines);
 const sports = new Sports(formSports)
 const stocks = new Stocks();
-const app = new App(weather, nasa, greeting, newDate, clock, news, sports, stocks);
+const giphy = new Giphy();
+const app = new App(weather, nasa, greeting, newDate, clock, news, sports, stocks, giphy);
 
 app.start();

@@ -22,7 +22,6 @@ const liMaker = text => {
     const index = itemsArray.findIndex(x => x === text);
     itemsArray.splice(index, 1);
     localStorage.setItem('taskList', JSON.stringify(itemsArray));
-
   });
 };
 

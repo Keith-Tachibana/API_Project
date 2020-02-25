@@ -1,17 +1,21 @@
 class Giphy {
-  constructor() {
+  constructor(formElement) {
+    this.formElement = formElement;
+    this.loadGiphy = this.loadGiphy.bind(this);
     this.getGiphy = this.getGiphy.bind(this);
     this.handleGetGiphySuccess = this.handleGetGiphySuccess.bind(this);
     this.handleGetGiphyError = this.handleGetGiphyError.bind(this);
+    this.handleSubmitGiphy = this.handleSubmitGiphy.bind(this);
+    this.formElement.addEventListener('submit', this.handleSubmitGiphy);
   }
 
-  getGiphy() {
+  getGiphy(input) {
     $.ajax({
       method: 'GET',
       url: 'https://api.giphy.com/v1/gifs/search',
       data: {
         'api_key': 'kGoW8DFKOAQFLvSz22dA6SU8VTzK28Rf',
-        'q': 'random'
+        'q': `${input}`
       },
       success: this.handleGetGiphySuccess,
       error: this.handleGetGiphyError
@@ -33,5 +37,24 @@ class Giphy {
 
   handleGetGiphyError(error) {
     console.log(error);
+  }
+
+  handleSubmitGiphy(event) {
+    event.preventDefault();
+    $('#giphy').text('');
+    let formData = new FormData(event.target);
+    let image = formData.get('giphy');
+    this.getGiphy(image);
+    localStorage.setItem('giphy', image);
+    event.target.reset();
+  }
+
+  loadGiphy() {
+    const currentImage = localStorage.getItem('giphy');
+    if (currentImage === undefined) {
+      return;
+    } else {
+      this.getGiphy(currentImage);
+    }
   }
 }

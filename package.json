@@ -1,0 +1,19 @@
+{
+  "name": "homepage_api",
+  "version": "1.0.0",
+  "description": "A dynamic homepage consisting of many API calls with a to do list",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keith-Tachibana/API_Project.git"
+  },
+  "author": "Keith Tachibana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Keith-Tachibana/API_Project/issues"
+  },
+  "homepage": "https://github.com/Keith-Tachibana/API_Project#readme"
+}

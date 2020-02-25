@@ -8,6 +8,7 @@ class Weather {
     this.handleSubmitWeather = this.handleSubmitWeather.bind(this);
     this.formElement.addEventListener('submit', this.handleSubmitWeather);
   }
+
   getWeather(input) {
     $.ajax({
       method: 'GET',
@@ -20,6 +21,7 @@ class Weather {
       error: this.handleGetWeatherError
     })
   }
+
   handleGetWeatherSuccess(data) {
     console.log('Weather:', data);
     let spanWeather1 = document.createElement('span');
@@ -139,6 +141,7 @@ class Weather {
     $('#sunset').append(spanWeather6);
     $('#weatherIMG').append(weatherIMG);
   }
+
   handleGetWeatherError(error) {
     console.log(error);
   }

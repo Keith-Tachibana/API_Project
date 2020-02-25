@@ -53,7 +53,16 @@
         </div>
         <hr />
         <div id="giphy-container">
-          <h5 class="text-white text-center">Random Giphy Picture:</h5>
+          <h5 class="text-white text-center">Search Giphy Pictures:</h5>
+          <form class="form-inline mb-4" id="giphy-form">
+            <div class="input-group mt-4">
+              <div class="input-group-prepend">
+                <i class="input-group-text far fa-images"></i>
+              </div>
+              <input type="text" name="giphy" id="giphy-search" placeholder="Enter image to search" size="25" required="required" />
+              <button type="submit" name="giphy-submit" id="giphy-submit">Submit</button>
+            </div>
+          </form>
           <div id="giphy" class="text-center"></div>
         </div>
       </div>

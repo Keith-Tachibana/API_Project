@@ -113,16 +113,24 @@ body {
   font-family: Tahoma, sans-serif;
 }
 
+#weather-city-container,
+#temps,
+#condition,
+#wind,
+#sunrise,
+#sunset,
 #weather-form {
   display: flex;
   justify-content: flex-end;
   margin-right: 15px;
 }
 
-#weather-city-container, #temps, #condition, #wind, #sunrise, #sunset {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 15px;
+#giphy-container, #weather-city-container {
+  width: 275px;
+}
+
+#weather-form {
+  width: 300px;
 }
 
 #city {

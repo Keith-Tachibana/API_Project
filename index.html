@@ -12,7 +12,7 @@
   </head>
   <body class="bg-dark">
     <div class="row">
-      <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2" id="calendar">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2" id="calendar">
         <p><i class="far fa-calendar-alt fa-lg text-white"><span id="date" class="h6 ml-1"></span></i></p>
         <p><i class="far fa-clock fa-lg text-white"><span id="clock" class="h6 ml-1"></span></i></p>
         <div id="stocks-container" class="mt-2">
@@ -20,7 +20,7 @@
         </div>
         <div id="maps" class="mt-4" style="height:350px;"></div>
       </div>
-      <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 mt-2" id="nasa">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 mt-2" id="nasa">
         <div id="greeting-container" class="text-center">
           <form>
             <input type="text" class="form-control mt-4 mb-4 text-center" id="submit-name" placeholder="Please enter your name" required="required" />
@@ -28,7 +28,7 @@
           <p class="d-none display-2 text-white" id="greeting"></p>
         </div>
       </div>
-      <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2">
         <form class="form-inline" id="weather-form">
           <div class="input-group mt-4">
             <div class="input-group-prepend">
@@ -38,28 +38,26 @@
             <button type="submit" name="weather-submit" id="weather-submit">Submit</button>
           </div>
         </form>
-        <div id="weather-city-container">
+        <div id="weather-city-container" class="float-right">
           <p>
             <span id="city" class="h6 d-none mt-2 text-white"></span>
             <span id="weatherIMG" class="d-none"></span>
           </p>
         </div>
-        <div>
+        <div class="float-right">
           <p id="temps" class="h6 d-none text-white"></p>
           <p id="condition" class="h6 d-none text-white"></p>
           <p id="wind" class="h6 d-none text-white"></p>
           <p id="sunrise" class="h6 d-none text-white"></p>
           <p id="sunset" class="h6 d-none text-white"></p>
         </div>
-        <hr />
-        <div id="giphy-container">
-          <h5 class="text-white text-center">Search Giphy Pictures:</h5>
+        <div id="giphy-container" class="float-right mt-4">
           <form class="form-inline mb-4" id="giphy-form">
             <div class="input-group mt-4">
               <div class="input-group-prepend">
                 <i class="input-group-text far fa-images"></i>
               </div>
-              <input type="text" name="giphy" id="giphy-search" placeholder="Enter image to search" size="25" required="required" />
+              <input type="text" name="giphy" id="giphy-search" placeholder="Enter Giphy image to search" size="25" required="required" />
               <button type="submit" name="giphy-submit" id="giphy-submit">Submit</button>
             </div>
           </form>

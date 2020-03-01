@@ -44,11 +44,6 @@ body {
   background-color: #fff;
 }
 
-#toDo-form {
-  position: relative;
-  top: -105%;
-}
-
 #toDo::placeholder {
   text-align: center;
 }
@@ -109,8 +104,14 @@ body {
   height: 800px;
   overflow: auto;
   font-size: 1rem;
-  direction: rtl;
   font-family: Tahoma, sans-serif;
+}
+
+.weather-giphy-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #weather-city-container,
@@ -123,6 +124,11 @@ body {
   display: flex;
   justify-content: flex-end;
   margin-right: 15px;
+}
+
+.maps-container {
+  display: flex;
+  justify-content: center;
 }
 
 #giphy-container, #weather-city-container {

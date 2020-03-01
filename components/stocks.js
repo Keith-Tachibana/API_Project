@@ -34,5 +34,4 @@ class Stocks {
   handleGetStocksError(error) {
     console.log(error);
   }
-
 }

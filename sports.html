@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
-    <title>Keith Tachibana: Homepage API</title>
+    <title>Keith Tachibana: Homepage To Do List</title>
   </head>
   <body class="bg-dark">
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top">
@@ -29,7 +29,7 @@
             <a class="nav-link h5 active" href="#">Sports</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link h5" href="./todo.html">To Do List</a>
+            <a class="nav-link h5" href="./dist/index.html">To Do List</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0 pr-4" id="giphy-form">
@@ -37,8 +37,7 @@
             <div class="input-group-prepend">
               <i class="input-group-text bg-success fas fa-image pt-2"></i>
             </div>
-            <input type="search" name="giphy" id="giphy-search" placeholder="Enter Giphy image to search"
-              class="form-control mr-sm-2" size="30" />
+            <input type="search" name="giphy" id="giphy-search" placeholder="Enter Giphy image to search" class="form-control mr-sm-2" size="30" required="required" />
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
           </div>
         </form>
@@ -47,8 +46,7 @@
             <div class="input-group-prepend">
               <i class="input-group-text bg-info fas fa-cloud-sun pt-2 ml-4"></i>
             </div>
-            <input type="search" name="weather" id="weather-search" placeholder="Enter city name for weather"
-              class="form-control mr-sm-2" size="50" />
+            <input type="search" name="weather" id="weather-search" placeholder="Enter city name for weather" class="form-control mr-sm-2" size="30" required="required" />
             <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Submit</button>
           </div>
         </form>

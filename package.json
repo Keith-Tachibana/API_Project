@@ -1,0 +1,35 @@
+{
+  "name": "homepage_todo_list",
+  "version": "1.0.0",
+  "description": "A project that uses multiple API's for a homepage todo list",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production",
+    "watch": "webpack --watch --mode=development --devtool=source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keith-Tachibana/Homepage_Todo_List.git"
+  },
+  "author": "Keith Tachibana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Keith-Tachibana/Homepage_Todo_List/issues"
+  },
+  "homepage": "https://github.com/Keith-Tachibana/Homepage_Todo_List#readme",
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "moment": "^2.24.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "uuid": "^7.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/plugin-transform-react-jsx": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }
+}

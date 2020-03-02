@@ -6,7 +6,7 @@ class AppSports {
     this.newDate = newDate;
     this.clock = clock;
     this.sports = sports;
-    //this.stocks = stocks;
+    this.stocks = stocks;
     this.giphy = giphy;
     this.quotes = quotes;
   }
@@ -18,7 +18,7 @@ class AppSports {
     this.newDate.getDate();
     this.clock.getTime();
     this.sports.getSports();
-    //this.stocks.getStocks();
+    this.stocks.getStocks();
     this.giphy.getGiphy();
     this.quotes.getQuotes();
   }

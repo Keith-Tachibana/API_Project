@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Boogaloo&display=swap" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
-    <title>Keith Tachibana: Homepage API</title>
+    <title>Keith Tachibana: Homepage To Do List</title>
   </head>
   <body class="bg-dark">
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top">
@@ -20,13 +20,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav nav-pills mr-auto mt-2 mt-lg-0">
           <li class="nav-item">
-            <a class="nav-link h5" href="./index.html">Home</a>
+            <a class="nav-link h5" href="../index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link h5" href="./maps.html">Maps</a>
+            <a class="nav-link h5" href="../maps.html">Maps</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link h5" href="./sports.html">Sports</a>
+            <a class="nav-link h5" href="../sports.html">Sports</a>
           </li>
           <li class="nav-item">
             <a class="nav-link h5 active" href="#">To Do List</a>
@@ -37,8 +37,7 @@
             <div class="input-group-prepend">
               <i class="input-group-text bg-success fas fa-image pt-2"></i>
             </div>
-            <input type="search" name="giphy" id="giphy-search" placeholder="Enter Giphy image to search"
-              class="form-control mr-sm-2" size="30" />
+            <input type="search" name="giphy" id="giphy-search" placeholder="Enter Giphy image to search" class="form-control mr-sm-2" size="30" required="required" />
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
           </div>
         </form>
@@ -47,8 +46,7 @@
             <div class="input-group-prepend">
               <i class="input-group-text bg-info fas fa-cloud-sun pt-2 ml-4"></i>
             </div>
-            <input type="search" name="weather" id="weather-search" placeholder="Enter city name for weather"
-              class="form-control mr-sm-2" size="50" />
+            <input type="search" name="weather" id="weather-search" placeholder="Enter city name for weather" class="form-control mr-sm-2" size="30" required="required" />
             <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Submit</button>
           </div>
         </form>
@@ -93,34 +91,20 @@
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
-        <form id="toDo-form" class="text-center">
-          <label for="toDo">
-            <h4 class="text-white">Today's To Do List:
-              <span>
-                <input type="text" id="toDo" class="ml-4" name="add" size="50" placeholder="Enter task to do here" />
-                <button type="button" id="toDo-add" class="ml-2">Add</button>
-              </span>
-            </h4>
-            <div id="toDo-container">
-              <ul id="toDo-ul" class="text-white"></ul>
-            </div>
-          </label>
-        </form>
-      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 text-center" id="root"></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="./components/weather.js"></script>
-    <script src="./components/nasa.js"></script>
-    <script src="./components/greeting.js"></script>
-    <script src="./components/newDate.js"></script>
-    <script src="./components/clock.js"></script>
-    <script src="./components/todo.js"></script>
-    <script src="./components/stocks.js"></script>
-    <script src="./components/giphy.js"></script>
-    <script src="./components/quotes.js"></script>
-    <script src="./components/appTodo.js"></script>
-    <script src="./mainTodo.js"></script>
+    <script src="../components/weather.js"></script>
+    <script src="../components/nasa.js"></script>
+    <script src="../components/greeting.js"></script>
+    <script src="../components/newDate.js"></script>
+    <script src="../components/clock.js"></script>
+    <script src="../components/stocks.js"></script>
+    <script src="../components/giphy.js"></script>
+    <script src="../components/quotes.js"></script>
+    <script src="../components/appTodo.js"></script>
+    <script src="../mainTodo.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>

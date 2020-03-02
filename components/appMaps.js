@@ -5,7 +5,7 @@ class AppMaps {
     this.greeting = greeting;
     this.newDate = newDate;
     this.clock = clock;
-    //this.stocks = stocks;
+    this.stocks = stocks;
     this.giphy = giphy;
     this.quotes = quotes;
   }
@@ -16,7 +16,7 @@ class AppMaps {
     this.greeting.loadName();
     this.newDate.getDate();
     this.clock.getTime();
-    //this.stocks.getStocks();
+    this.stocks.getStocks();
     this.giphy.getGiphy();
     this.quotes.getQuotes();
   }
